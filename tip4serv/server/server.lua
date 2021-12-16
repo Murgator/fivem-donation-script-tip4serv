@@ -1,5 +1,5 @@
 -- Tip4serv key
-local tip4serv_key = "54.1ce42a4bbf7d02a08b9b35a555d3f548.c865a28470faa11ea62bff9d134953dc25b812d8d6f1a8ff1635c1ad6d12167739a6101d745eb57708003a7734600e707465becf6da6330ce4763a0b248ddd9b"
+local tip4serv_key = "PASTE YOUR TIP4SERV KEY HERE"
 
 -- Check for ESX and MySQL
 ESX = nil
