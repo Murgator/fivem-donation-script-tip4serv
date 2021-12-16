@@ -1,5 +1,5 @@
 -- Tip4serv key
-local tip4serv_key = ""
+local tip4serv_key = "PASTE YOUR TIP4SERV KEY HERE"
 
 -- Check for ESX and MySQL
 ESX = nil
