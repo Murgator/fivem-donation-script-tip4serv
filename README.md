@@ -46,5 +46,6 @@ You get this message in the console when the server has started: **Server has be
 
 Adds executable console commands compatible with essential and offline players (works by steam id).
 
-[esx_tip4serv](https://github.com/Murgator/esx-fivem-commands)
-[esx2_tip4serv](https://github.com/Murgator/esx2-fivem-commands)
+[ESX_tip4serv](https://github.com/Murgator/esx-fivem-commands)
+
+[ESX2_tip4serv](https://github.com/Murgator/esx2-fivem-commands)
