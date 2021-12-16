@@ -44,5 +44,7 @@ You get this message in the console when the server has started: **Server has be
 
 #### Essential/MySQL add-on: esx_tip4serv
 
-[esx_tip4serv](https://github.com/Murgator/esx-fivem-commands) adds executable console commands compatible with essential and offline players (works by steam id).
-[esx2_tip4serv](https://github.com/Murgator/esx2-fivem-commands) adds executable console commands compatible with ESX2 and offline players (works by steam id).
+Adds executable console commands compatible with essential and offline players (works by steam id).
+
+[esx_tip4serv](https://github.com/Murgator/esx-fivem-commands)
+[esx2_tip4serv](https://github.com/Murgator/esx2-fivem-commands)
