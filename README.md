@@ -1,4 +1,4 @@
-## Tip4serv
+## TIP4SERV SCRIPT
 
 This script connects your [Tip4serv.com](https://tip4serv.com/) store to your FiveM server.
 It checks if a customer has bought something on your tip4serv store and delivers the order (money, rank...) by typing commands in the server console
