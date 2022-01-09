@@ -42,10 +42,31 @@ Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instruction
 
 You get this message in the console when the server has started: **Server has been successfully connected**
 
-#### Essential/MySQL add-on: esx_tip4serv
+#### ESX FRAMEWORK COMMANDS (https://esx-framework.github.io/)
 
-Adds executable console commands (money,group,job,announce) compatible with essential and offline players:
+Here are some commands you can use if you have ESX FRAMEWORK installed on your FiveM server
 
-[ESX_tip4serv](https://github.com/Murgator/esx-fivem-commands) (works by steam id)
+#### giveaccountmoney {fivem_liveid} [account-type(money/bank...)] [amount]
+Give money to a player on his bank account or pocket money.
 
-[ESX2_tip4serv](https://github.com/Murgator/esx2-fivem-commands) (works by database identifier)
+Example: `giveaccountmoney {fivem_liveid} bank 5000`
+
+#### giveitem {fivem_liveid} [item] [count]
+This command gives an inventory item to the user.
+
+Example: `giveitem {fivem_liveid} milk 1`
+
+#### giveweapon {fivem_liveid} [weapon_name] [ammo]
+This command gives a weapon to the user.
+
+Example: `giveweapon {fivem_liveid} weapon_heavyrifle 32`
+
+#### setgroup {fivem_liveid} [group_name] [ammo]
+This command sets the group of the user.
+
+Example: `setgroup {fivem_liveid} vip`
+
+#### setjob {fivem_liveid} [job_name] [job_grade]
+This command sets the users job and job grade.
+
+Example: `setjob {fivem_liveid} police 1`
