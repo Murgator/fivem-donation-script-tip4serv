@@ -24,7 +24,7 @@ You get this message in the console when the server has started: **Server has be
 
 ESX framework is required: https://esx-framework.github.io/
 
-Here are some commands you can use in the products configuration: https://tip4serv.com/dashboard/my-products
+Here are some commands you can use in the products configuration (https://tip4serv.com/dashboard/my-products)
 
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
 
