@@ -1,4 +1,4 @@
-### Tip4serv
+## Tip4serv
 
 This script connects your [Tip4serv.com](https://tip4serv.com/) store to your FiveM server.
 It checks if a customer has bought something on your tip4serv store and delivers the order (money, rank...) by typing commands in the server console
@@ -20,7 +20,7 @@ Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instruction
 You get this message in the console when the server has started: **Server has been successfully connected**
 
 
-#### ESX FRAMEWORK COMMANDS (https://esx-framework.github.io/)
+### ESX FRAMEWORK COMMANDS (https://esx-framework.github.io/)
 
 Here are some commands you can use if you have ESX FRAMEWORK installed on your FiveM server
 
