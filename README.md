@@ -24,27 +24,27 @@ You get this message in the console when the server has started: **Server has be
 
 Here are some commands if you are using the ESX framework: https://esx-framework.github.io/
 
-#### giveaccountmoney {fivem_liveid} [account-type(money/bank...)] [amount]
+#### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 Give money to a player on his bank account or pocket money.
 
-Example: `giveaccountmoney {fivem_liveid} bank 5000`
+Example: `giveaccountmoney {fivem_live_id} bank 5000`
 
-#### giveitem {fivem_liveid} [item] [count]
+#### giveitem {fivem_live_id} [item] [count]
 This command gives an inventory item to the user.
 
-Example: `giveitem {fivem_liveid} milk 1`
+Example: `giveitem {fivem_live_id} milk 1`
 
-#### giveweapon {fivem_liveid} [weapon_name] [ammo]
+#### giveweapon {fivem_live_id} [weapon_name] [ammo]
 This command gives a weapon to the user.
 
-Example: `giveweapon {fivem_liveid} weapon_heavyrifle 32`
+Example: `giveweapon {fivem_live_id} weapon_heavyrifle 32`
 
-#### setgroup {fivem_liveid} [group_name] [ammo]
+#### setgroup {fivem_live_id} [group_name] [ammo]
 This command sets the group of the user.
 
-Example: `setgroup {fivem_liveid} vip`
+Example: `setgroup {fivem_live_id} vip`
 
-#### setjob {fivem_liveid} [job_name] [job_grade]
+#### setjob {fivem_live_id} [job_name] [job_grade]
 This command sets the users job and job grade.
 
-Example: `setjob {fivem_liveid} police 1`
+Example: `setjob {fivem_live_id} police 1`
