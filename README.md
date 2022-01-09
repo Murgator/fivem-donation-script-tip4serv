@@ -22,7 +22,7 @@ You get this message in the console when the server has started: **Server has be
 
 ## ESX FRAMEWORK COMMANDS
 
-Here are some commands you can use if you have ESX FRAMEWORK installed on your FiveM server: https://esx-framework.github.io/
+Here are some commands if you are using the ESX framework: https://esx-framework.github.io/
 
 #### giveaccountmoney {fivem_liveid} [account-type(money/bank...)] [amount]
 Give money to a player on his bank account or pocket money.
