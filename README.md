@@ -24,7 +24,7 @@ You get this message in the console when the server has started: **Server has be
 
 Here are some commands if you are using the ESX framework: https://esx-framework.github.io/
 
-When the player is present on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
+When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
 
 #### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 Give money to a player on his bank account or pocket money.
