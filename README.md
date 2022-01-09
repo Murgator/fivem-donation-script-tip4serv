@@ -20,9 +20,9 @@ Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instruction
 You get this message in the console when the server has started: **Server has been successfully connected**
 
 
-## ESX FRAMEWORK COMMANDS (https://esx-framework.github.io/)
+## ESX FRAMEWORK COMMANDS
 
-Here are some commands you can use if you have ESX FRAMEWORK installed on your FiveM server
+Here are some commands you can use if you have ESX FRAMEWORK installed on your FiveM server: https://esx-framework.github.io/
 
 #### giveaccountmoney {fivem_liveid} [account-type(money/bank...)] [amount]
 Give money to a player on his bank account or pocket money.
