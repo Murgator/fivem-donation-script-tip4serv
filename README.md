@@ -23,6 +23,7 @@ You get this message in the console when the server has started: **Server has be
 ## ESX FRAMEWORK COMMANDS
 
 Here are some commands if you are using the ESX framework: https://esx-framework.github.io/
+When the player is present on the server, his live_id will be retrieved using the steam_id or discord_id that he will have entered during his purchase on your Tip4Serv page.
 
 #### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 Give money to a player on his bank account or pocket money.
