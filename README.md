@@ -22,7 +22,7 @@ You get this message in the console when the server has started: **Server has be
 
 ## ESX FRAMEWORK COMMANDS
 
-ESX framework is required: https://esx-framework.github.io/
+ESX framework is required if you want to use commands below: https://esx-framework.github.io/
 
 Here are some commands you can use in the products configuration (https://tip4serv.com/dashboard/my-products)
 
