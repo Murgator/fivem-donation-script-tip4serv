@@ -41,7 +41,7 @@ Example: `giveitem {fivem_live_id} milk 1`
 #### giveweapon {fivem_live_id} [weapon_name] [ammo]
 This command gives a weapon to the user.
 
-Example: `giveweapon {fivem_live_id} weapon_heavyrifle 32`
+Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
 
 #### setgroup {fivem_live_id} [group_name] [ammo]
 This command sets the group of the user.
