@@ -12,7 +12,7 @@ Tip4serv adds a layer of security using HMAC authentication to communicate. It i
 Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instructions and add a FiveM server.
 
 1) Copy the `tip4serv` directory to your `resources` folder on your FiveM server.
-2) Set `tip4serv_key` to your tip4serv API key in `tip4serv/server/server.lua`
+2) Set `Config.key` to your tip4serv API key in `tip4serv/config.lua`
 3) To start the script, add this line at the end of your resources in server.cfg: `ensure tip4serv` (if that doesn't work add this instead: `start tip4serv`)
 4) Add this line in server.cfg to allow tip4serv to type commands in the console: `add_ace resource.tip4serv command allow`
 5) Restart the server and click on connect in your tip4serv.com panel.
