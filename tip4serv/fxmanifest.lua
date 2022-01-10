@@ -8,7 +8,6 @@ version '1.0.5'
 shared_script 'config.lua'
 
 server_scripts {
-    '@async/async.lua',
     'server/sha256.lua',
     'server/server.lua'
 }
