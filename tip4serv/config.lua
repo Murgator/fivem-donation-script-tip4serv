@@ -1,2 +1,2 @@
 Config = {}
-Config.key = "PASTE YOUR TIP4SERV KEY HERE"
+Config.key = "PASTE_YOUR_TIP4SERV_KEY_HERE"
