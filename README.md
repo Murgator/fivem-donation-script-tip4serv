@@ -52,3 +52,5 @@ Example: `setgroup {fivem_live_id} vip`
 This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
+
+Do not hesitate to ask me for new useful commands.
