@@ -66,8 +66,8 @@ if not Tip4serv then
 						if (Player_id and string.match(cmd["str"], "{fivem_live_id}")) then
 							cmd["str"] = string.gsub(cmd["str"], "{fivem_live_id}", Player_id)
 						end
-						if (licence and string.match(cmd["str"], "{fivem_xplayer_id}")) then
-							cmd["str"] = string.gsub(cmd["str"], "{fivem_xplayer_id}", licence)
+						if (licence and string.match(cmd["str"], "{fivem_licence}")) then
+							cmd["str"] = string.gsub(cmd["str"], "{fivem_licence}", licence)
 						end
 						Tip4serv.exe_command(cmd["str"])						
 						new_cmds[tostring(cmd["id"])] = 3
