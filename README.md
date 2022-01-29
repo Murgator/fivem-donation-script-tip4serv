@@ -47,7 +47,7 @@ Example: `t4s_announce [STORE] Thanks to {discord_username} for donating to the 
 
 Example: `t4s_announce [STORE] Thanks to {steam_username} for donating to the server on mystore.tip4serv.com`
 
-#### COMMANDS FOR ESX FRAMEWORK
+## COMMANDS FOR ESX FRAMEWORK
 
 Below commands are part of **es_extended**. ESX framework is required: https://esx-framework.github.io/
 
@@ -77,7 +77,7 @@ This command sets the users job and job grade.
 Example: `setjob {fivem_live_id} police 1`
 
 
-#### COMMANDS FOR QBCORE FRAMEWORK
+## COMMANDS FOR QBCORE FRAMEWORK
 
 QBCore framework is required if you want to use commands below: https://github.com/qbcore-framework.
 
