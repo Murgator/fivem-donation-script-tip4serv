@@ -88,7 +88,9 @@ Example: `setjob {fivem_live_id} police 1`
 
 QBCore framework is required if you want to use commands below: https://github.com/qbcore-framework.
 
-You have to set `Config.enable_custom_command` to `true` in `config.lua` file. This commands are located in this file: `/server/commands.lua`.
+***You have to set `Config.enable_custom_command` to `true` in `config.lua` file.*** 
+
+This commands are located in this file: `/server/commands.lua`.
 
 ##### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 
