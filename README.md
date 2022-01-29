@@ -96,29 +96,29 @@ Give money to a player on his bank account or pocket money.
 
 Example: `giveaccountmoney {fivem_live_id} bank 5000`
 
-##### giveitem {fivem_live_id} [item] [count]
+##### setplayergang [Player ID] [Name of a gang] [Grade]
 
-This command gives an inventory item to the user.
+This command set player gang and grade.
 
-Example: `giveitem {fivem_live_id} milk 1`
+Example: `setplayergang {fivem_live_id} ballas 1`
 
-##### giveweapon {fivem_live_id} [weapon_name] [ammo]
+##### setplayerjob [Player ID] [Name of a job] [Grade]
 
-This command gives a weapon to the user.
+This command set player job and grade.
 
-Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
+Example: `setplayerjob {fivem_live_id} police 1`
 
-##### setgroup {fivem_live_id} [group_name] [ammo]
+##### setplayerpermission [Player ID] [Permission name]
 
-This command sets the group of the user.
+This command set player permissions.
 
-Example: `setgroup {fivem_live_id} vip`
+Example: `setplayerpermission {fivem_live_id} vip`
 
-##### setjob {fivem_live_id} [job_name] [job_grade]
+##### removeplayerpermission [Player ID]
 
-This command sets the users job and job grade.
+This command remove all player permissions.
 
-Example: `setjob {fivem_live_id} police 1`
+Example: `removeplayerpermission {fivem_live_id}`
 
 
 ## Commands also run automatically
