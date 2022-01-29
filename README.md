@@ -36,13 +36,14 @@ Before setting up your commands on Tip4serv.com, you should know that they work 
 Here are some commands you can use in the products configuration: (https://tip4serv.com/dashboard/my-products).
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
 
-```
-t4s_announce [prefix] [text]
-```
+#### t4s_announce [prefix] [text]
 
 Advertise in server chat. (This command is part of Tip4serv script and works natively)
 
-Example: `t4s_announce [STORE] Thanks to {discord_username} for donating to the server on mystore.tip4serv.com`
+Example: 
+```
+t4s_announce [STORE] Thanks to {discord_username} for donating to the server on mystore.tip4serv.com
+```
 
 Example: `t4s_announce [STORE] Thanks to {steam_username} for donating to the server on mystore.tip4serv.com`
 
