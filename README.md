@@ -37,10 +37,13 @@ Here are some commands you can use in the products configuration: (https://tip4s
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
 
 ###### t4s_announce [prefix] [text]
-**Advertise in server chat. (This command is part of Tip4serv script and works natively)**
+
+Advertise in server chat. (This command is part of Tip4serv script and works natively)
 
 Examples: 
+
 `t4s_announce [STORE] Thanks to {discord_username} for donating to the server on mystore.tip4serv.com`
+
 `t4s_announce [STORE] Thanks to {steam_username} for donating to the server on mystore.tip4serv.com`
 
 ***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
@@ -50,28 +53,33 @@ Examples:
 
 Below commands are part of **es_extended**. ESX framework is required: https://esx-framework.github.io/
 
-- giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
-**Give money to a player on his bank account or pocket money.**
+###### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
+
+Give money to a player on his bank account or pocket money.
 
 Example: `giveaccountmoney {fivem_live_id} bank 5000`
 
-- giveitem {fivem_live_id} [item] [count]
-**This command gives an inventory item to the user.**
+###### giveitem {fivem_live_id} [item] [count]
+
+This command gives an inventory item to the user.
 
 Example: `giveitem {fivem_live_id} milk 1`
 
-- giveweapon {fivem_live_id} [weapon_name] [ammo]
-**This command gives a weapon to the user.**
+###### giveweapon {fivem_live_id} [weapon_name] [ammo]
+
+This command gives a weapon to the user.
 
 Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
 
-- setgroup {fivem_live_id} [group_name] [ammo]
-**This command sets the group of the user.**
+###### setgroup {fivem_live_id} [group_name] [ammo]
+
+This command sets the group of the user.
 
 Example: `setgroup {fivem_live_id} vip`
 
-- setjob {fivem_live_id} [job_name] [job_grade]
-**This command sets the users job and job grade.**
+###### setjob {fivem_live_id} [job_name] [job_grade]
+
+This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
 
@@ -83,27 +91,32 @@ QBCore framework is required if you want to use commands below: https://github.c
 You have to set `Config.enable_custom_command` to `true` in `config.lua` file. This commands are located in this file: `/server/commands.lua`.
 
 #### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
+
 Give money to a player on his bank account or pocket money.
 
 Example: `giveaccountmoney {fivem_live_id} bank 5000`
 
-- giveitem {fivem_live_id} [item] [count]
-**This command gives an inventory item to the user.**
+###### giveitem {fivem_live_id} [item] [count]
+
+This command gives an inventory item to the user.
 
 Example: `giveitem {fivem_live_id} milk 1`
 
-- giveweapon {fivem_live_id} [weapon_name] [ammo]
-**This command gives a weapon to the user.**
+###### giveweapon {fivem_live_id} [weapon_name] [ammo]
+
+This command gives a weapon to the user.
 
 Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
 
-- setgroup {fivem_live_id} [group_name] [ammo]
-**This command sets the group of the user.**
+###### setgroup {fivem_live_id} [group_name] [ammo]
+
+This command sets the group of the user.
 
 Example: `setgroup {fivem_live_id} vip`
 
-- setjob {fivem_live_id} [job_name] [job_grade]
-**This command sets the users job and job grade.**
+###### setjob {fivem_live_id} [job_name] [job_grade]
+
+This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
 
