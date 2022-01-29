@@ -45,7 +45,6 @@ Example: `t4s_announce [STORE] Thanks to {steam_username} for donating to the se
 
 ***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
 
-If you need help creating your custom command contact us on https://tip4serv.com/contact
 
 ## COMMANDS FOR ESX FRAMEWORK
 
@@ -116,3 +115,7 @@ Useful if you are creating subscriptions with expiration commands.
 Example: if the player unsubscribes, his VIP group will be removed.
 
 To ensure player data is fully loaded, commands with `{fivem_live_id}` will only execute if the player has moved at least once since connecting to the server. This is to ensure that the player is not in the loading screen or in the character choice.
+
+## Contact
+
+If you need help creating your custom command contact us on https://tip4serv.com/contact
