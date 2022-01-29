@@ -44,6 +44,7 @@ When the player is connected on the FiveM server, his `{fivem_live_id}` will be 
 Advertise in server chat.
 
 Example: `t4s_announce [STORE] Thanks to {discord_username} for donating to the server on mystore.tip4serv.com`
+
 Example: `t4s_announce [STORE] Thanks to {steam_username} for donating to the server on mystore.tip4serv.com`
 
 #### COMMANDS FOR ESX FRAMEWORK
