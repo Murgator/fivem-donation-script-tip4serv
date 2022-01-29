@@ -90,7 +90,7 @@ QBCore framework is required if you want to use commands below: https://github.c
 
 You have to set `Config.enable_custom_command` to `true` in `config.lua` file. This commands are located in this file: `/server/commands.lua`.
 
-#### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
+##### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 
 Give money to a player on his bank account or pocket money.
 
