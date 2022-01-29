@@ -32,6 +32,7 @@ This script is compatible with all FiveM frameworks just know that you have to u
 Before setting up your commands on Tip4serv.com, you should know that they work in your server's console.
 
 ***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
+
 If you need help creating your custom command contact us on https://tip4serv.com/contact
 
 ## Console commands
