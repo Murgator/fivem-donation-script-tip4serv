@@ -45,7 +45,7 @@ Example: `t4s_announce [STORE] Thanks to {steam_username} for donating to the se
 
 ***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
 
-
+__
 ## COMMANDS FOR ESX FRAMEWORK
 
 Below commands are part of **es_extended**. ESX framework is required: https://esx-framework.github.io/
