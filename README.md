@@ -53,31 +53,31 @@ Examples:
 
 Below commands are part of **es_extended**. ESX framework is required: https://esx-framework.github.io/
 
-###### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
+##### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 
 Give money to a player on his bank account or pocket money.
 
 Example: `giveaccountmoney {fivem_live_id} bank 5000`
 
-###### giveitem {fivem_live_id} [item] [count]
+##### giveitem {fivem_live_id} [item] [count]
 
 This command gives an inventory item to the user.
 
 Example: `giveitem {fivem_live_id} milk 1`
 
-###### giveweapon {fivem_live_id} [weapon_name] [ammo]
+##### giveweapon {fivem_live_id} [weapon_name] [ammo]
 
 This command gives a weapon to the user.
 
 Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
 
-###### setgroup {fivem_live_id} [group_name] [ammo]
+##### setgroup {fivem_live_id} [group_name] [ammo]
 
 This command sets the group of the user.
 
 Example: `setgroup {fivem_live_id} vip`
 
-###### setjob {fivem_live_id} [job_name] [job_grade]
+##### setjob {fivem_live_id} [job_name] [job_grade]
 
 This command sets the users job and job grade.
 
@@ -90,31 +90,31 @@ QBCore framework is required if you want to use commands below: https://github.c
 
 You have to set `Config.enable_custom_command` to `true` in `config.lua` file. This commands are located in this file: `/server/commands.lua`.
 
-###### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
+##### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 
 Give money to a player on his bank account or pocket money.
 
 Example: `giveaccountmoney {fivem_live_id} bank 5000`
 
-###### giveitem {fivem_live_id} [item] [count]
+##### giveitem {fivem_live_id} [item] [count]
 
 This command gives an inventory item to the user.
 
 Example: `giveitem {fivem_live_id} milk 1`
 
-###### giveweapon {fivem_live_id} [weapon_name] [ammo]
+##### giveweapon {fivem_live_id} [weapon_name] [ammo]
 
 This command gives a weapon to the user.
 
 Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
 
-###### setgroup {fivem_live_id} [group_name] [ammo]
+##### setgroup {fivem_live_id} [group_name] [ammo]
 
 This command sets the group of the user.
 
 Example: `setgroup {fivem_live_id} vip`
 
-###### setjob {fivem_live_id} [job_name] [job_grade]
+##### setjob {fivem_live_id} [job_name] [job_grade]
 
 This command sets the users job and job grade.
 
