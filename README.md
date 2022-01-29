@@ -118,4 +118,4 @@ To ensure player data is fully loaded, commands with `{fivem_live_id}` will only
 
 ## Contact
 
-If you need help creating your custom command contact us on https://tip4serv.com/contact
+If you need help contact us on https://tip4serv.com/contact
