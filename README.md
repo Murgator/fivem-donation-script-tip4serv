@@ -1,4 +1,4 @@
-## Tip4Serv script for FiveM ESX
+## Tip4Serv script for FiveM
 
 This script connects your [Tip4serv.com](https://tip4serv.com/) store to your FiveM server.
 It checks if a customer has bought something on your tip4serv store and delivers the order (money, rank...) by typing commands in the server console
@@ -14,19 +14,39 @@ Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instruction
 1) Copy the `tip4serv` directory to your `resources` folder on your FiveM server.
 2) Set `Config.key` to your tip4serv API key in `tip4serv/config.lua`
 3) To start the script, add this line ***at the end*** of your resources in server.cfg: `ensure tip4serv`
-4) Add this line in server.cfg to allow tip4serv to type commands in the console: `add_ace resource.tip4serv command allow`
+4) Add this line in your `server.cfg` to allow tip4serv to type commands in the console: `add_ace resource.tip4serv command allow`
 5) Restart the server and click on connect in your tip4serv.com panel.
 
 You get this message in the console when the server has started: **Server has been successfully connected**
 
+To check if the server is correctly connected type `restart tip4serv` in your server console.
 
-## ESX FRAMEWORK COMMANDS
+## How to buy and receive your order
 
-ESX framework is required if you want to use commands below: https://esx-framework.github.io/
+1) Player buys a product on tip4serv store.
+2) Player types `/checkdonate` command on the server chat and receives his order.
 
-Here are some commands you can use in the products configuration (https://tip4serv.com/dashboard/my-products)
+#### No dependencie
 
+This script is compatible with all FiveM frameworks just know that you have to use console commands.
+Before setting up your commands on Tip4serv.com, you should know that they work in your server's console.
+
+***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
+If you need help creating your custom command contact us on https://tip4serv.com/contact
+
+## Console commands
+
+Here are some commands you can use in the products configuration: (https://tip4serv.com/dashboard/my-products).
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
+
+#### t4s_announce [prefix] [text]
+Advertise in server chat.
+
+Example: `t4s_announce [STORE] Thanks to {discord_username} for donating to the server on mystore.tip4serv.com`
+
+#### COMMANDS FOR ESX FRAMEWORK
+
+Below commands are part of **es_extended**. ESX framework is required: https://esx-framework.github.io/
 
 #### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 Give money to a player on his bank account or pocket money.
@@ -53,4 +73,43 @@ This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
 
-Do not hesitate to ask me for new useful commands.
+
+#### COMMANDS FOR QBCORE FRAMEWORK
+
+QBCore framework is required if you want to use commands below: https://github.com/qbcore-framework.
+
+You have to set `Config.enable_custom_command` to `true` in `config.lua` file. This commands are located in this file: `/server/commands.lua`.
+
+#### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
+Give money to a player on his bank account or pocket money.
+
+Example: `giveaccountmoney {fivem_live_id} bank 5000`
+
+#### giveitem {fivem_live_id} [item] [count]
+This command gives an inventory item to the user.
+
+Example: `giveitem {fivem_live_id} milk 1`
+
+#### giveweapon {fivem_live_id} [weapon_name] [ammo]
+This command gives a weapon to the user.
+
+Example: `giveweapon {fivem_live_id} WEAPON_STUNGUN 32`
+
+#### setgroup {fivem_live_id} [group_name] [ammo]
+This command sets the group of the user.
+
+Example: `setgroup {fivem_live_id} vip`
+
+#### setjob {fivem_live_id} [job_name] [job_grade]
+This command sets the users job and job grade.
+
+Example: `setjob {fivem_live_id} police 1`
+
+
+## Commands also run automatically
+
+Useful if you are creating subscriptions with expiration commands.
+
+Example: if the player unsubscribes, his VIP group will be removed.
+
+To ensure player data is fully loaded, commands with `{fivem_live_id}` will only execute if the player has moved at least once since connecting to the server. This is to ensure that the player is not in the loading screen or in the character choice.
