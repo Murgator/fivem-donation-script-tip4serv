@@ -229,7 +229,7 @@ RegisterCommand(Config.check_cmd_name, function(src, args, raw)
 		end
 		table.insert(active_players, tonumber(src))
 		SaveResourceFile(GetCurrentResourceName(), active_players_path, json.encode(active_players, {indent = true}))
-		TriggerClientEvent("tip4serv:showSubtitle", src, "[Tip4serv] Your order will be delivered within 30 seconds...", 5000)
+		TriggerClientEvent("tip4serv:showSubtitle", tonumber(src), "[Tip4serv] Your order will be delivered within 30 seconds...", 5000)
 	else
 		print(error_cmd)
 		return
