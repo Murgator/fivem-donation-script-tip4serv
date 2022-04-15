@@ -26,9 +26,9 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 1) Player buys a product on Tip4Serv store.
 2) Player types `/checkdonate` command on the FiveM server chat and receives his order.
 
-***Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame as a player).***
-
 ## Console commands
+
+***Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame as a player).***
 
 Here are some commands you can use in the products configuration: (https://tip4serv.com/dashboard/my-products).
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
