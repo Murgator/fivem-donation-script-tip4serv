@@ -28,7 +28,7 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 
 The player can also type `/checkdonate` on the server chat to receive his order faster.
 
-## Console commands
+## Setting up commands on Tip4Serv
 
 ***Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame as a player).***
 
