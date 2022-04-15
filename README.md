@@ -26,10 +26,6 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 1) Player buys a product on Tip4Serv store.
 2) Player types `/checkdonate` command on the FiveM server chat and receives his order.
 
-#### No dependencie, work with console commands
-
-This script is compatible with all FiveM frameworks just know that you have to use console commands.
-
 ***Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame as a player).***
 
 ## Console commands
