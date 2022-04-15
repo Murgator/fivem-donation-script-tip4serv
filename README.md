@@ -123,7 +123,7 @@ This command remove all player permissions.
 
 Example: `removeplayerpermission {fivem_live_id}`
 
-## Create commands compatible with console / tip4serv
+## Create commands compatible with console & Tip4Serv
 
 If you want to create commands make sure they are console compatible !
 
