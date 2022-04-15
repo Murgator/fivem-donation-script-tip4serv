@@ -46,15 +46,7 @@ Examples:
 
 `t4s_announce [STORE] Thanks to {steam_username} for donating to the server on mystore.tip4serv.com`
 
-***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
-
-## Create commands compatible with console / tip4serv
-
-If you want to create commands make sure they are console compatible !
-
-Use "RegisterCommand" method: https://docs.fivem.net/docs/scripting-manual/migrating-from-deprecated/creating-commands/
-
-Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
+***If your framework does not offer any console commands you will have to create them see bottom of page***
 
 ## COMMANDS FOR ESX FRAMEWORK
 
@@ -131,6 +123,13 @@ This command remove all player permissions.
 
 Example: `removeplayerpermission {fivem_live_id}`
 
+## Create commands compatible with console / tip4serv
+
+If you want to create commands make sure they are console compatible !
+
+Use "RegisterCommand" method: https://docs.fivem.net/docs/scripting-manual/migrating-from-deprecated/creating-commands/
+
+Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
 
 ## Commands also run automatically
 
