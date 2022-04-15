@@ -51,6 +51,7 @@ Examples:
 ## Create console compatible commands
 
 If you want to create commands, use "RegisterCommand": https://docs.fivem.net/docs/scripting-manual/migrating-from-deprecated/creating-commands/
+
 Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
 
 ## COMMANDS FOR ESX FRAMEWORK
