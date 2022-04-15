@@ -32,7 +32,7 @@ The player can also type `/checkdonate` on the server chat to receive his order 
 
 ***Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame as a player).***
 
-***If your framework does not offer any console commands you will have to create them see bottom of page***
+***If your framework does not offer any console commands you will have to create them see bottom of page.***
 
 Here are some commands you can use in the products configuration: (https://tip4serv.com/dashboard/my-products).
 
