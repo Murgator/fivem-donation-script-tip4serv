@@ -48,6 +48,10 @@ Examples:
 
 ***If your framework does not offer any console commands you will have to create them***, for this you can edit this file: `/server/commands.lua` (QBCore example) and set `Config.enable_custom_command` to `true` in `config.lua` file.
 
+## Create console compatible commands
+
+If you want to create commands, use "RegisterCommand": https://docs.fivem.net/docs/scripting-manual/migrating-from-deprecated/creating-commands/
+Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
 
 ## COMMANDS FOR ESX FRAMEWORK
 
