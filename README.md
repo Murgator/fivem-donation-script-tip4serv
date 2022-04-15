@@ -26,7 +26,7 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 1) Player buys a product on Tip4Serv store.
 2) The player receives his order in the game.
 
-The player can also type `/checkdonate` on the FiveM server chat to receive his order faster.
+The player can also type `/checkdonate` on the server chat to receive his order faster.
 
 ## Console commands
 
