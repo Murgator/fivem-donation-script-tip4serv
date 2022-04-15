@@ -32,6 +32,8 @@ The player can also type `/checkdonate` on the server chat to receive his order 
 
 ***Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame as a player).***
 
+***If your framework does not offer any console commands you will have to create them see bottom of page***
+
 Here are some commands you can use in the products configuration: (https://tip4serv.com/dashboard/my-products).
 
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
@@ -45,8 +47,6 @@ Examples:
 `t4s_announce [STORE] Thanks to {discord_username} for donating to the server on mystore.tip4serv.com`
 
 `t4s_announce [STORE] Thanks to {steam_username} for donating to the server on mystore.tip4serv.com`
-
-***If your framework does not offer any console commands you will have to create them see bottom of page***
 
 ## COMMANDS FOR ESX FRAMEWORK
 
