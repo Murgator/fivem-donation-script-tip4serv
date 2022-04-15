@@ -19,7 +19,7 @@ Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instruction
 
 You get this message in the console when the server has started: **Server has been successfully connected**
 
-To check if the server is correctly connected type `restart tip4serv` in your server console (not ingame).
+To check if the server is correctly connected type `restart tip4serv` in your server console.
 
 ## How to buy and receive your order
 
@@ -29,7 +29,7 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 #### No dependencie, work with console commands
 
 This script is compatible with all FiveM frameworks just know that you have to use console commands.
-Before setting up your commands on Tip4serv.com, you should know that they work in your server's console.
+Before setting up your commands on Tip4serv.com, you should know that they work in your server's console (not ingame).
 
 ## Console commands
 
