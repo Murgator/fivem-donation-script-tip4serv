@@ -24,7 +24,9 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 ## How to buy and receive your order
 
 1) Player buys a product on Tip4Serv store.
-2) Player types `/checkdonate` command on the FiveM server chat and receives his order.
+2) The player receives his order in the game.
+
+The player can also type `/checkdonate` on the FiveM server chat to receive his order faster.
 
 ## Console commands
 
