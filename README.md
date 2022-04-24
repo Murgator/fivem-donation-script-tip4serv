@@ -87,7 +87,9 @@ Example: `setjob {fivem_live_id} police 1`
 
 ## COMMANDS FOR QBCORE FRAMEWORK
 
-***You have to set `Config.enable_custom_command` to `true` in `config.lua` file.*** QBCore framework is required: https://github.com/qbcore-framework.
+***You have to set `Config.enable_custom_command` to `true` in `config.lua` file.*** 
+
+QBCore framework is required: https://github.com/qbcore-framework.
 
 This commands are located in this file: `/server/commands.lua`.
 
