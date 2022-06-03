@@ -27,16 +27,18 @@ if not Tip4serv then
 			if (get_cmd == "no") then
 				print("^5"..json_decoded.."^7") return
 			end	
-			--Clear old json infos
-			SaveResourceFile(GetCurrentResourceName(), response_path, "")
 			--Check for error
-			if (json_decoded[1] == nil) then		
+			if (json_decoded[1] == nil) then
+				--Clear old json infos if no API error
+				if string.match(json_decoded, "Tip4serv error") then else SaveResourceFile(GetCurrentResourceName(), response_path, "") end
 				if string.match(json_decoded, "No pending payments found") then
 					--print("^5"..json_decoded.."^7")
 					return
 				elseif string.match(json_decoded, "Tip4serv") then
 					print("^5"..json_decoded.."^7") return
-				end
+				end	
+			else
+				SaveResourceFile(GetCurrentResourceName(), response_path, "")		
 			end
 			--Get active players list
 			local active_players = json.decode(LoadResourceFile(GetCurrentResourceName(), active_players_path))	
@@ -165,7 +167,7 @@ local missing_key = "^5[Tip4serv error] Please set Config.key to a valid key in 
 -- Asynchronously checks if a purchase has been made (every 30 seconds)
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(30000)	
+		Citizen.Wait(Config.request_interval_in_minutes*60*1000)	
 		key_arr = {} i = 0
 		for info in string.gmatch(Config.key, '([^.]+)') do key_arr[i] = info i = i+1 end
 		if (i ~= 3) then
