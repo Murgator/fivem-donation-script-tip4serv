@@ -14,7 +14,7 @@ if not Tip4serv then
 			json_encoded = Tip4serv.urlencode(response)
 		end
 		--Request Tip4serv
-		local statusUrl = "https://api.tip4serv.com/payments_api.php?id="..server_id.."&time="..timestamp.."&json="..json_encoded.."&get_cmd="..get_cmd
+		local statusUrl = "https://api.tip4serv.com/payments_api_v2.php?id="..server_id.."&time="..timestamp.."&json="..json_encoded.."&get_cmd="..get_cmd
 		PerformHttpRequest(statusUrl, function(statusCode, tip4serv_response, _)
 			if (statusCode ~= 200 or tip4serv_response == nil) then
 				if (get_cmd == "no") then
@@ -29,17 +29,16 @@ if not Tip4serv then
 			end	
 			--Check for error
 			if (json_decoded[1] == nil) then
-				--Clear old json infos if no API error
-				if string.match(json_decoded, "Tip4serv error") then else SaveResourceFile(GetCurrentResourceName(), response_path, "") end
 				if string.match(json_decoded, "No pending payments found") then
+					SaveResourceFile(GetCurrentResourceName(), response_path, "")
 					--print("^5"..json_decoded.."^7")
 					return
 				elseif string.match(json_decoded, "Tip4serv") then
 					print("^5"..json_decoded.."^7") return
 				end	
-			else
-				SaveResourceFile(GetCurrentResourceName(), response_path, "")		
 			end
+			--Clear old json infos
+			SaveResourceFile(GetCurrentResourceName(), response_path, "")
 			--Get active players list
 			local active_players = json.decode(LoadResourceFile(GetCurrentResourceName(), active_players_path))	
 			--Loop customers
