@@ -56,24 +56,26 @@ if not Tip4serv then
 					TriggerClientEvent("tip4serv:showSubtitle", player_infos["playerId"], "[Tip4serv] You have received your order. Thank you !", 10000)
 				end
 				--Execute commands for player
-				for k,cmd in ipairs(infos["cmds"]) do
-					--Do not run this command if the player must be online
-					if (player_infos == false and (string.match(cmd["str"], "{") or cmd["state"] == 1)) then
-						new_obj["status"] = 14
-					else
-						if (player_infos and player_infos["playerId"] and string.match(cmd["str"], "{fivem_live_id}")) then
-							cmd["str"] = string.gsub(cmd["str"], "{fivem_live_id}", player_infos["playerId"])
+				if type(infos["cmds"]) == "table" then
+					for k,cmd in ipairs(infos["cmds"]) do
+						--Do not run this command if the player must be online
+						if (player_infos == false and (string.match(cmd["str"], "{") or cmd["state"] == 1)) then
+							new_obj["status"] = 14
+						else
+							if (player_infos and player_infos["playerId"] and string.match(cmd["str"], "{fivem_live_id}")) then
+								cmd["str"] = string.gsub(cmd["str"], "{fivem_live_id}", player_infos["playerId"])
+							end
+							if (licence and string.match(cmd["str"], "{fivem_licence}")) then
+								cmd["str"] = string.gsub(cmd["str"], "{fivem_licence}", licence)
+							end
+							Tip4serv.exe_command(cmd["str"])						
+							new_cmds[tostring(cmd["id"])] = 3
 						end
-						if (licence and string.match(cmd["str"], "{fivem_licence}")) then
-							cmd["str"] = string.gsub(cmd["str"], "{fivem_licence}", licence)
-						end
-						Tip4serv.exe_command(cmd["str"])						
-						new_cmds[tostring(cmd["id"])] = 3
 					end
+					new_obj["cmds"] = new_cmds
+					if new_obj["status"] == nil then new_obj["status"] = 3 end
+					new_json[infos["id"]] = new_obj
 				end
-				new_obj["cmds"] = new_cmds
-				if new_obj["status"] == nil then new_obj["status"] = 3 end
-		        new_json[infos["id"]] = new_obj
 			end
 			--Save the new json file
 			SaveResourceFile(GetCurrentResourceName(), response_path, json.encode(new_json, {indent = true}))
