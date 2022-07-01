@@ -53,7 +53,7 @@ if not Tip4serv then
 				if player_infos then
 					new_obj["fivem_live_id"] = player_infos["playerId"]
 					new_obj["xplayerid"] = player_infos["licence"]
-					TriggerClientEvent("tip4serv:showSubtitle", player_infos["playerId"], "[Tip4serv] You have received your order. Thank you !", 10000)
+					TriggerClientEvent("tip4serv:showSubtitle", player_infos["playerId"], Config.order_received_text, 10000)
 				end
 				--Execute commands for player
 				if type(infos["cmds"]) == "table" then
@@ -232,7 +232,7 @@ RegisterCommand(Config.check_cmd_name, function(src, args, raw)
 		end
 		table.insert(active_players, tonumber(src))
 		SaveResourceFile(GetCurrentResourceName(), active_players_path, json.encode(active_players, {indent = true}))
-		TriggerClientEvent("tip4serv:showSubtitle", tonumber(src), "[Tip4serv] Your order will be delivered within 30 seconds...", 5000)
+		TriggerClientEvent("tip4serv:showSubtitle", tonumber(src), Config.order_waiting_text, 5000)
 	else
 		print(error_cmd)
 		return
