@@ -151,24 +151,24 @@ if Config.enable_custom_command == true then
         local item_name = tostring(args[2])
         local amount = tonumber(args[3])
 
-	-- Retrieve the player's data from qb-core framework	
-	local Player = QBCore.Functions.GetPlayer(player_id)
+        -- Retrieve the player's data from qb-core framework	
+        local Player = QBCore.Functions.GetPlayer(player_id)
 		
-	-- Check if item exist
-	local itemData = QBCore.Shared.Items[item_name:lower()]
+        -- Check if item exist
+        local itemData = QBCore.Shared.Items[item_name:lower()]
 		
-	if itemData["name"] then		
-	    -- Give item to the player
+        if itemData["name"] then
+            -- Give item to the player
             if Player then
                 local info = {}
                 Player.Functions.AddItem(itemData["name"], amount, false, info)
             else
                 print("Player is offline");
-            end	
+            end
         else
             print("This item does not exist");
         end
-    end, false)    
+    end, false)
 
 end
 
