@@ -135,6 +135,40 @@ if Config.enable_custom_command == true then
             print("Player is offline");
         end	
     end, false)
+    
+    -- Give an item to player inventory
+    -- Usage: giveinventoryitem [Player ID] [Item name] [Amount]	
+    RegisterCommand("giveinventoryitem", function(src, args, raw)
+
+        -- Disallow players from using this command
+        if src > 0 then
+            print("This command must be executed by the server console or RCON client");
+            return false
+        end
+
+        -- Create the variables received by the command
+        local player_id = tonumber(args[1])
+        local item_name = tostring(args[2])
+        local amount = tonumber(args[3])
+
+		-- Retrieve the player's data from qb-core framework	
+		local Player = QBCore.Functions.GetPlayer(player_id)
+		
+		-- Check if item exist
+		local itemData = QBCore.Shared.Items[item_name:lower()]
+		
+		if itemData["name"] then		
+			-- Give item to the player
+			if Player then
+				local info = {}
+				Player.Functions.AddItem(itemData["name"], amount, false, info)
+			else
+				print("Player is offline");
+			end	
+		else
+			print("This item does not exist");
+		end
+    end, false)    
 
 end
 
