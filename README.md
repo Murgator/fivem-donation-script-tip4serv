@@ -123,6 +123,12 @@ This command remove all player permissions.
 
 Example: `removeplayerpermission {fivem_live_id}`
 
+##### giveinventoryitem {fivem_live_id} [Item name] [Amount]
+
+This command give an item to a player inventory
+
+Example: `giveinventoryitem {fivem_live_id} WEAPON_KNIFE 1`
+
 ## Create commands compatible with console & Tip4Serv
 
 If you want to create commands make sure they are console compatible !
