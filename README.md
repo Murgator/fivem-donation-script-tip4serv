@@ -88,6 +88,8 @@ Example: `setjob {fivem_live_id} police 1`
 
 Script required: https://github.com/minobear/esx_givevehicle
 
+Use the console command, the prefix must be "_" : 
+
 `_givecar {fivem_live_id} [car] <plate>`
 
 `_giveplane {fivem_live_id} [car] <plate>`
