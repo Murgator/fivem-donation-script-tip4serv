@@ -84,9 +84,9 @@ This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
 
-##### give a vehicle to a player (ESX Vehicle)
+##### give a vehicle to a player
 
-Script required: https://github.com/minobear/esx_givevehicle
+ESX Vehicle is required: https://github.com/minobear/esx_givevehicle
 
 Use the console command, the prefix must be "_" : 
 
