@@ -89,8 +89,11 @@ Example: `setjob {fivem_live_id} police 1`
 Script required: https://github.com/minobear/esx_givevehicle
 
 `_givecar {fivem_live_id} [car] <plate>`
+
 `_giveplane {fivem_live_id} [car] <plate>`
+
 `_giveboat {fivem_live_id} [car] <plate>`
+
 `_giveheli {fivem_live_id} [car] <plate>`
 
 
