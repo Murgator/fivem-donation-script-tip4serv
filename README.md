@@ -1,7 +1,7 @@
 ## Tip4Serv script for FiveM
 
 This script connects your [Tip4serv.com](https://tip4serv.com/) store to your FiveM server.
-It checks if a customer has bought something on your Tip4Serv store and delivers the order (money, rank...) by typing commands in the server console
+It checks if a customer has bought something on your Tip4Serv store and delivers the order (money, rank, vehicle, item...) by typing commands in the server console
 
 #### HMAC authentification
 
