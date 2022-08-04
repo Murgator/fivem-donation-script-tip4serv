@@ -84,7 +84,7 @@ This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
 
-##### _givecar {fivem_live_id} [model] [plate]
+##### _givecar {fivem_live_id} [model]
 
 This command give a vehicle to a player.
 
@@ -92,7 +92,7 @@ ESX Vehicle is required: https://github.com/minobear/esx_givevehicle
 
 Use the console command, the prefix must be "_" : 
 
-Example: `_givecar {fivem_live_id} t20 AB123CD`
+Example: `_givecar {fivem_live_id} t20`
 
 
 ## COMMANDS FOR QBCORE FRAMEWORK
@@ -139,13 +139,13 @@ This command give an item to a player inventory
 
 Example: `giveinventoryitem {fivem_live_id} WEAPON_KNIFE 1`
 
-##### givevehicletoplayer {fivem_live_id} [Model] [Plate]
+##### givevehicletoplayer {fivem_live_id} [Model]
 
 HH Vehextras is required: https://github.com/hhfw1/hh_vehextras
 
 This command give a vehicle to a player
 
-Example: `givevehicletoplayer {fivem_live_id} t20 AB123CD`
+Example: `givevehicletoplayer {fivem_live_id} t20`
 
 ## Create commands compatible with console & Tip4Serv
 
