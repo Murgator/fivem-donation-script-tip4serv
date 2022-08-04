@@ -92,7 +92,7 @@ ESX Vehicle is required: https://github.com/minobear/esx_givevehicle
 
 Use the console command, the prefix must be "_" : 
 
-Example: `_givecar {fivem_live_id} t20 ABC123`
+Example: `_givecar {fivem_live_id} t20 AB123CD`
 
 
 ## COMMANDS FOR QBCORE FRAMEWORK
