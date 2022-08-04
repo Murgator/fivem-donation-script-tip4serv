@@ -84,19 +84,15 @@ This command sets the users job and job grade.
 
 Example: `setjob {fivem_live_id} police 1`
 
-##### give a vehicle to a player
+##### _givecar {fivem_live_id} [model] [plate]
+
+This command give a vehicle to a player.
 
 ESX Vehicle is required: https://github.com/minobear/esx_givevehicle
 
 Use the console command, the prefix must be "_" : 
 
-`_givecar {fivem_live_id} [car] <plate>`
-
-`_giveplane {fivem_live_id} [car] <plate>`
-
-`_giveboat {fivem_live_id} [car] <plate>`
-
-`_giveheli {fivem_live_id} [car] <plate>`
+Example: `_givecar {fivem_live_id} T20 ABC123`
 
 
 ## COMMANDS FOR QBCORE FRAMEWORK
