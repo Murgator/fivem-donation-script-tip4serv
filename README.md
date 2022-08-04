@@ -143,6 +143,14 @@ This command give an item to a player inventory
 
 Example: `giveinventoryitem {fivem_live_id} WEAPON_KNIFE 1`
 
+##### givevehicletoplayer {fivem_live_id} [Model] [Plate]
+
+HH Vehextras is required: https://github.com/hhfw1/hh_vehextras
+
+This command give a vehicle to a player
+
+Example: `givevehicletoplayer {fivem_live_id} T20 ABC123`
+
 ## Create commands compatible with console & Tip4Serv
 
 If you want to create commands make sure they are console compatible !
