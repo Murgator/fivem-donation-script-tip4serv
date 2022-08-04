@@ -169,6 +169,32 @@ if Config.enable_custom_command == true then
             print("This item does not exist");
         end
     end, false)
+	
+    -- Give a vehicle to player
+    -- Usage: givevehicletoplayer [Player ID] [Model] [Plate]
+    -- Dependency: https://github.com/hhfw1/hh_vehextras
+    RegisterCommand("givevehicletoplayer", function(src, args, raw)
+        if src > 0 then
+            print("This command must be executed by the server console or RCON client");
+            return false
+        end
+
+        -- Retrieve the player's data from qb-core framework
+        local player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+        local vehicle = args[2]
+        local plate = args[3]
+
+        -- Generate plate if not specified
+        if not plate or plate == "" then 
+            plate = string.char(math.random(65, 65 + 25)) .. string.char(math.random(65, 65 + 25)) .. math.random(0, 9) .. math.random(0, 9) .. math.random(0, 9) .. string.char(math.random(65, 65 + 25)) .. string.char(math.random(65, 65 + 25)) 
+        end
+
+        -- Give vehicle to player
+        if vehicle and player then
+            TriggerClientEvent('hhfw:client:givecar', args[1], vehicle, plate)
+        end	
+
+end, false)	
 
 end
 
