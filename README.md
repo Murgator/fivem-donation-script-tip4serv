@@ -163,6 +163,6 @@ Example: if the player unsubscribes, his VIP group will be removed.
 
 To ensure player data is fully loaded, commands with `{fivem_live_id}` will only execute if the player has moved at least once since connecting to the server. This is to ensure that the player is not in the loading screen or in the character choice.
 
-## Help
+## Help for other framework
 
-If you are using another framework and need help creating commands contact us on https://tip4serv.com/contact
+If you are using another framework and need help for creating commands contact us on https://tip4serv.com/contact
