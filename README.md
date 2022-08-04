@@ -147,14 +147,6 @@ This command give a vehicle to a player
 
 Example: `givevehicletoplayer {fivem_live_id} t20`
 
-## Create commands compatible with console & Tip4Serv
-
-If you want to create commands make sure they are console compatible !
-
-Use "RegisterCommand" method: https://docs.fivem.net/docs/scripting-manual/migrating-from-deprecated/creating-commands/
-
-Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
-
 ## Commands also run automatically
 
 Useful if you are creating subscriptions with expiration commands.
@@ -163,6 +155,14 @@ Example: if the player unsubscribes, his VIP group will be removed.
 
 To ensure player data is fully loaded, commands with `{fivem_live_id}` will only execute if the player has moved at least once since connecting to the server. This is to ensure that the player is not in the loading screen or in the character choice.
 
-## Help for other framework
+## Create commands compatible with console & Tip4Serv
 
-If you are using another framework and need help for creating commands contact us on https://tip4serv.com/contact
+If you want to create commands make sure they are console compatible !
+
+Use "RegisterCommand" method: https://docs.fivem.net/docs/scripting-manual/migrating-from-deprecated/creating-commands/
+
+Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
+
+## Need help creating new commands ?
+
+If you are using another framework or want to create custom commands contact us on https://tip4serv.com/contact
