@@ -145,7 +145,7 @@ HH Vehextras is required: https://github.com/hhfw1/hh_vehextras
 
 This command give a vehicle to a player
 
-Example: `givevehicletoplayer {fivem_live_id} T20 ABC123`
+Example: `givevehicletoplayer {fivem_live_id} t20 AB123CD`
 
 ## Create commands compatible with console & Tip4Serv
 
