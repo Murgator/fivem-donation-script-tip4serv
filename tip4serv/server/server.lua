@@ -93,7 +93,6 @@ if not Tip4serv then
 			steamHash = Tip4serv.getHexSteamId(infos["steamid"])
 		end	
 		for _, playerId in ipairs(active_players) do		
-		--for _, playerId in ipairs(GetPlayers()) do		
 		    local identifiers = GetPlayerIdentifiers(playerId)
 			local player_infos = {}
 			for k,v in pairs(identifiers) do		
