@@ -1,7 +1,7 @@
-## Tip4Serv script for FiveM
+## Donation script for FiveM (Tip4Serv)
 
 This script connects your [Tip4serv.com](https://tip4serv.com/) store to your FiveM server.
-It checks if a customer has bought something on your Tip4Serv store and delivers the order (money, rank, vehicle, item...) by typing commands in the server console
+it checks if a player has made a donation on your Tip4Serv store and delivers the order (money, rank, vehicle, item...) by typing commands in the server console
 
 #### HMAC authentification
 
@@ -23,7 +23,7 @@ To check if the server is correctly connected type `restart tip4serv` in your se
 
 ## How to buy and receive your order
 
-1) Player buys a product on Tip4Serv store.
+1) Player make a donation on Tip4Serv store.
 2) The player receives his order in the game.
 
 The player can also type `/checkdonate` on the server chat to receive his order faster.
