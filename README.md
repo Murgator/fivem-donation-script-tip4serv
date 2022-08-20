@@ -52,7 +52,7 @@ Examples:
 
 [ESX framework is required](https://esx-framework.github.io/)
 
-Below commands are part of **es_extended**. (https://github.com/esx-framework/esx-legacy/blob/main/%5Besx%5D/es_extended/server/commands.lua)
+Below commands are part of [es_extended](https://github.com/esx-framework/esx-legacy/blob/main/%5Besx%5D/es_extended/server/commands.lua)
 
 ##### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 
