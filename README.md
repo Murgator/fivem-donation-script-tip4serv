@@ -50,7 +50,7 @@ Examples:
 
 ## COMMANDS FOR ESX FRAMEWORK
 
-ESX framework is required: https://esx-framework.github.io/
+[ESX framework is required](https://esx-framework.github.io/)
 
 Below commands are part of **es_extended**. (https://github.com/esx-framework/esx-legacy/blob/main/%5Besx%5D/es_extended/server/commands.lua)
 
@@ -99,7 +99,7 @@ Example: `_givecar {fivem_live_id} t20`
 
 ***You have to set `Config.enable_custom_command` to `true` in `config.lua` file.*** 
 
-QBCore framework is required: https://github.com/qbcore-framework.
+[QBCore framework is required](https://github.com/qbcore-framework)
 
 This commands are located in this file: `/server/commands.lua`.
 
@@ -165,4 +165,4 @@ Follow the same example as giveaccountmoney line 10: https://github.com/Murgator
 
 ## Need help creating new commands ?
 
-If you are using another framework or want to create custom commands contact us on https://tip4serv.com/contact
+If you are using another framework or want to create custom commands [contact us](https://tip4serv.com/contact)
