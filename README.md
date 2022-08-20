@@ -34,7 +34,7 @@ The player can also type `/checkdonate` on the server chat to receive his order 
 
 ***If your framework does not offer any console commands you will have to create them see bottom of page.***
 
-Here are some commands you can use in the products configuration: (https://tip4serv.com/dashboard/my-products).
+Here are some commands you can use in the [products configuration](https://tip4serv.com/dashboard/my-products).
 
 When the player is connected on the FiveM server, his `{fivem_live_id}` will be retrieved using the `Steam ID` or `Discord ID` that he will have entered during his purchase.
 
