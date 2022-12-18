@@ -50,7 +50,7 @@ Examples:
 
 ## COMMANDS FOR ESX FRAMEWORK
 
-[ESX framework](https://esx-framework.github.io/) and [es_extended](https://github.com/esx-framework/esx-legacy/blob/main/%5Besx%5D/es_extended/server/commands.lua) are required
+[ESX framework](https://esx-framework.github.io/) and [es_extended](https://github.com/esx-framework/esx-legacy/tree/main/%5Besx%5D/es_extended) are required
 
 ##### giveaccountmoney {fivem_live_id} [account-type(money/bank...)] [amount]
 
