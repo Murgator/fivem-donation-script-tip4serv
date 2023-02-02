@@ -145,7 +145,7 @@ Example: `givevehicletoplayer {fivem_live_id} t20`
 
 ## Quantity multiplier
 
-You can also multiply the quantity choosen by the customer like this: `{quantity*64}`
+You can also multiply the quantity choosen by the customer like this: `{quantity*100}`
 
 Note: You must first activate the **Allow quantity choice** option in your product
 
