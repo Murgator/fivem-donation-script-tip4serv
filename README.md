@@ -143,6 +143,18 @@ This command give a vehicle to a player
 
 Example: `givevehicletoplayer {fivem_live_id} t20`
 
+## Quantity multiplier
+
+You can also multiply the quantity choosen by the customer like this: {quantity*64}
+
+Example:
+
+Use this command on Tip4serv if you want to sell bundles of $100: 
+`giveaccountmoney {fivem_live_id} bank {quantity*100}`
+
+This will run in your server console after a purchase if the player buys product 4 times:
+`giveaccountmoney 14 bank 400`
+
 ## Commands also run automatically
 
 Useful if you are creating subscriptions with expiration commands.
