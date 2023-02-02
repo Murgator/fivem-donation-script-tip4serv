@@ -147,6 +147,8 @@ Example: `givevehicletoplayer {fivem_live_id} t20`
 
 You can also multiply the quantity choosen by the customer like this: {quantity*64}
 
+Note: You must first activate the Allow quantity choice option in your product
+
 Example:
 
 Use this command on Tip4serv if you want to sell bundles of $100: 
