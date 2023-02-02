@@ -145,13 +145,11 @@ Example: `givevehicletoplayer {fivem_live_id} t20`
 
 ## Quantity multiplier
 
-You can also multiply the quantity choosen by the customer like this: {quantity*64}
+You can also multiply the quantity choosen by the customer like this: `{quantity*64}`
 
-Note: You must first activate the Allow quantity choice option in your product
+Note: You must first activate the **Allow quantity choice** option in your product
 
-Example:
-
-Use this command on Tip4serv if you want to sell bundles of $100: 
+Use this command on Tip4serv if you want to sell bundles of $100:
 `giveaccountmoney {fivem_live_id} bank {quantity*100}`
 
 This will run in your server console after a purchase if the player buys product 4 times:
