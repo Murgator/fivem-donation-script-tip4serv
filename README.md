@@ -1,6 +1,6 @@
 ## Donation script for FiveM (Tip4Serv)
 
-This script connects your [Tip4serv.com](https://tip4serv.com/) store to your FiveM server.
+This script connects your [Tip4serv.com](https://tip4serv.com/?ads=github) store to your FiveM server.
 It checks if a player has made a donation on your Tip4Serv store and delivers the order (money, rank, vehicle, item...) by typing commands in the server console
 
 #### HMAC authentification
@@ -9,7 +9,7 @@ Tip4serv adds a layer of security using HMAC authentication to communicate. It i
 
 #### Installation
 
-Open an account on [Tip4serv.com](https://tip4serv.com/), follow the instructions and add a FiveM server.
+Open an account on [Tip4serv.com](https://tip4serv.com/?ads=github), follow the instructions and add a FiveM server.
 
 1) Copy the `tip4serv` directory to your `resources` folder on your FiveM server.
 2) Set `Config.key` to your tip4serv API key in `tip4serv/config.lua`
