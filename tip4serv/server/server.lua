@@ -1,4 +1,4 @@
--- Tip4serv plugin 1.5.9
+-- Tip4serv plugin 1.6.0
 
 -- JSON data files
 local response_path = "data/response.json"
@@ -70,7 +70,8 @@ if not Tip4serv then
 							if (licence and string.match(cmd["str"], "{fivem_licence}")) then
 								cmd["str"] = string.gsub(cmd["str"], "{fivem_licence}", licence)
 							end
-							Tip4serv.exe_command(cmd["str"])						
+							Tip4serv.exe_command(cmd["str"])
+							Citizen.Wait(Config.time_between_each_command)
 							new_cmds[tostring(cmd["id"])] = 3
 						end
 					end
