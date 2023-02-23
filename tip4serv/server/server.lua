@@ -69,7 +69,7 @@ if not Tip4serv then
 								cmd["str"] = string.gsub(cmd["str"], "{fivem_licence}", licence)
 							end
 							Tip4serv.exe_command(cmd["str"])
-							Citizen.Wait(Config.time_between_each_command)
+							Citizen.Wait(Config.time_between_each_command*1000)
 							new_cmds[tostring(cmd["id"])] = 3
 						end
 					end
