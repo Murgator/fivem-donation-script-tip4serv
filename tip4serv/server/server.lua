@@ -1,5 +1,3 @@
--- Tip4serv plugin 1.6.0
-
 -- JSON data files
 local response_path = "data/response.json"
 local active_players_path = "data/active_players.json"
