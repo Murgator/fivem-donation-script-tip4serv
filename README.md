@@ -173,4 +173,6 @@ Follow the same example as giveaccountmoney line 10: https://github.com/Murgator
 
 ## Need help creating new commands ?
 
+Read the [documentation](https://docs.tip4serv.com)
+
 If you are using another framework or want to create custom commands [contact us](https://tip4serv.com/contact)
