@@ -171,7 +171,7 @@ Use "RegisterCommand" method: https://docs.fivem.net/docs/scripting-manual/migra
 
 Follow the same example as giveaccountmoney line 10: https://github.com/Murgator/Tip4Serv/blob/master/tip4serv/server/commands.lua
 
-## Need help creating new commands ?
+## Need help ?
 
 Read the [documentation](https://docs.tip4serv.com)
 
