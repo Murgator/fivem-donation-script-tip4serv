@@ -1,7 +1,5 @@
 Config = {}
 
-Config.key = "TIP4SERV_KEY" -- Your Tip4Serv server key that you will find here: https://tip4serv.com/dashboard/my-servers
-
 Config.request_interval_in_minutes = 1 -- Check every x minutes if a purchase has been made on Tip4Serv
 
 Config.time_between_each_command = 0 -- Wait x seconds between each command executed
