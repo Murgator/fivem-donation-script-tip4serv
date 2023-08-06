@@ -13,9 +13,13 @@ Open an account on [Tip4serv.com](https://tip4serv.com/?ads=github), follow the 
 
 1) Copy the `tip4serv` directory to your `resources` folder on your FiveM server.
 2) Add these lines ***at the end*** of your `server.cfg` file:
+
 `set tip4serv_key "YOUR_API_KEY"`
+
 `ensure tip4serv`
+
 `add_ace resource.tip4serv command allow`
+
 3) Restart the server and click on connect in your tip4serv.com panel.
 
 You get this message in the console when the server has started: **Server has been successfully connected**
