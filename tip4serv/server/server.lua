@@ -1,6 +1,18 @@
 -- JSON data files
 local response_path = "data/response.json"
-local active_players_path = "data/active_players.json"
+local active_players= {}
+
+function registerPlayer(plyId) 
+	ply = GetPlayerIdentifiers(plyId)
+	for k,v in ipairs(ply) do 
+		keypairs = Tip4serv.split(v,":")
+		if keypairs[1] == "discord" or keypairs[1] == "steam" then 
+			active_players[keypairs[2]] = plyId
+			break 
+		end
+	end
+end
+
 -- Utility functions
 if not Tip4serv then
 	Tip4serv = {}
@@ -39,8 +51,6 @@ if not Tip4serv then
 			end
 			--Clear old json infos
 			SaveResourceFile(GetCurrentResourceName(), response_path, "")
-			--Get active players list
-			local active_players = json.decode(LoadResourceFile(GetCurrentResourceName(), active_players_path))	
 			--Loop customers
 			local new_json = {}
 			for k,infos in ipairs(json_decoded) do
@@ -48,7 +58,7 @@ if not Tip4serv then
 				new_obj["date"] = os.date("%c")
 				new_obj["action"] = infos["action"]
 				--Check if player is online and loaded and get licence
-				player_infos = Tip4serv.checkifPlayerIsLoaded(infos,active_players)
+				player_infos = Tip4serv.checkifPlayerIsLoaded(infos)
 				licence = infos["xplayerid"]
 				if player_infos then
 					new_obj["fivem_live_id"] = player_infos["playerId"]
@@ -88,29 +98,39 @@ if not Tip4serv then
 	Tip4serv.getHexSteamId = function ( steamId )
 		return string.format("%x", steamId)
 	end
-	Tip4serv.checkifPlayerIsLoaded = function ( infos, active_players )
-		local steamHash = "no"
-		if infos["steamid"] ~= "" then
-			steamHash = Tip4serv.getHexSteamId(infos["steamid"])
-		end	
-		for _, playerId in ipairs(active_players) do		
-		    local identifiers = GetPlayerIdentifiers(playerId)
-			local player_infos = {}
-			for k,v in pairs(identifiers) do		
-				if (v == "licence:" .. infos["xplayerid"]) or (infos["auth"] == "steamid" and v == "steam:" .. steamHash) or (infos["auth"] == "discordid" and v == "discord:" .. infos["discordid"]) then
-					--get licence here
-					player_infos["playerId"] = playerId
-					for _, v in pairs(identifiers) do
-						if (string.match(v, "licence:") or string.match(v, "license:")) then
-							local licence = Tip4serv.split(v, ":")
-							player_infos["licence"] = licence[2]								
-							break
-						end	
-					end			
-					return player_infos
-				end
+	Tip4serv.checkifPlayerIsLoaded = function ( infos)
+		local getter_player = ""
+		
+		
+		if infos["auth"] == "steamid" then 
+			if infos["steamid"] ~= "" then
+				getter_player = Tip4serv.getHexSteamId(infos["steamid"])
+			else 
+				return false 
 			end
-		end		
+		end
+		if infos["auth"] == "discordid" then 
+			if infos["discordid"] ~= "" then 
+				getter_player = infos["discordid"]
+			else 
+				return false; 
+			end
+		end
+		local playerId =active_players[getter_player]
+		if(playerId == nil) then 
+			return false 
+		end
+		local ply = GetPlayerIdentifiers(playerId)
+		local player_infos = {}
+		for k, v in ipairs(ply) do 
+			local key_pairs = Tip4serv.split(v, ":")
+			if key_pairs[1]=="license" then 
+				player_infos["licence"] = key_pairs[2]
+				player_infos["playerId"] = playerId
+				return player_infos
+			end
+		end
+
 		return false
 	end
 	Tip4serv.base64_encode = function ( data )
@@ -152,25 +172,31 @@ if not Tip4serv then
 		end
 	end
 	Tip4serv.split =  function(inputstr, sep)
-		if sep == nil then
-			sep = "%s"
+		local current_str = ""
+		local string_array = {}
+		inputstr:gsub(".",function(c) 
+			if c == sep then 
+				table.insert(string_array,current_str)
+				current_str = ""
+			else 
+				current_str = current_str .. c
+			end
+		end) 
+		if current_str ~= "" then 
+			table.insert(string_array,current_str)
 		end
-		local t={}
-		for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-			table.insert(t, str)
-		end
-		return t
+		return string_array
 	end
 end
 
-local missing_key = "^5[Tip4serv error] Please set Config.key to a valid key in tip4serv/config.lua then restart tip4serv resource. Make sure you have copied the entire key on Tip4serv.com (CTRL+A then CTRL+C)^7"
+local missing_key = "^5[Tip4serv error] Please set tip4serv_key to a valid key in your server.cfg then restart your server. Make sure you have copied the entire key on Tip4serv.com (CTRL+A then CTRL+C)^7"
 
 -- Asynchronously checks if a purchase has been made (every 30 seconds)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(Config.request_interval_in_minutes*60*1000)	
 		key_arr = {} i = 0
-		for info in string.gmatch(Config.key, '([^.]+)') do key_arr[i] = info i = i+1 end
+		for info in string.gmatch(GetConvar("tip4serv_key","INVALID_API_KEY"), '([^.]+)') do key_arr[i] = info i = i+1 end
 		if (i ~= 3) then
 			print(missing_key)
 			CancelEvent() return
@@ -184,9 +210,8 @@ AddEventHandler('onResourceStart', function(resourceName)
 	if (GetCurrentResourceName() ~= resourceName) then
 		return
 	end
-	SaveResourceFile(GetCurrentResourceName(), active_players_path, json.encode({}, {indent = true}))
 	key_arr = {} i = 0
-	for info in string.gmatch(Config.key, '([^.]+)') do key_arr[i] = info i = i+1 end
+	for info in string.gmatch(GetConvar("tip4serv_key","INVALID_API_KEY"), '([^.]+)') do key_arr[i] = info i = i+1 end
 	if (i ~= 3) then
 		print(missing_key)
 		return false
@@ -198,40 +223,27 @@ end)
 RegisterNetEvent('tip4serv:onPlayerLoaded')
 AddEventHandler('tip4serv:onPlayerLoaded', function(currentPos,prevPos)
 	if (GetPlayerPing(source) ~= 0) then
-		local active_players = json.decode(LoadResourceFile(GetCurrentResourceName(), active_players_path))
-		for i = 1, #active_players do
-			if (active_players[i] == source) then
-				table.remove( active_players, i )
-			end
-		end
-		table.insert(active_players, tonumber(source))
-		SaveResourceFile(GetCurrentResourceName(), active_players_path, json.encode(active_players, {indent = true}))
+		registerPlayer(source)
 	end
 end)
 
 -- Remove player from active list when player leave the server
 AddEventHandler('playerDropped', function ()
-	local active_players = json.decode(LoadResourceFile(GetCurrentResourceName(), active_players_path))
-	for i = 1, #active_players do
-		if (active_players[i] == source) then
-			table.remove( active_players, i )
+	local ply = GetPlayerIdentifiers(source)
+	for k,v in ipairs(ply) do
+		local keypairs = Tip4serv.split(v,":")
+		if(active_players[keypairs[2]] ~= nil) then 
+			active_players[keypairs[2]] = nil
+			break
 		end
-	end	
-	SaveResourceFile(GetCurrentResourceName(), active_players_path, json.encode(active_players, {indent = true}))	
+	end
 end)
 
 -- Check command: check if a purchase has been made and give order to player
 local error_cmd = "^5[Tip4serv error] This command must be executed in the server chat^7"
 RegisterCommand(Config.check_cmd_name, function(src, args, raw)
 	if src > 0 then
-		local active_players = json.decode(LoadResourceFile(GetCurrentResourceName(), active_players_path))
-		for i = 1, #active_players do
-			if (active_players[i] == src) then
-				table.remove( active_players, i )
-			end
-		end
-		table.insert(active_players, tonumber(src))
-		SaveResourceFile(GetCurrentResourceName(), active_players_path, json.encode(active_players, {indent = true}))
+		registerPlayer(tonumber(src))
 		TriggerClientEvent("tip4serv:showSubtitle", tonumber(src), Config.order_waiting_text, 5000)
 	else
 		print(error_cmd)
