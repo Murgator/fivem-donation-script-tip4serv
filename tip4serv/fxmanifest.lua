@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Murgator'
 description 'Tip4serv'
-version '2.6.0'
+version '3.0.1'
 
 shared_script 'config.lua'
 
