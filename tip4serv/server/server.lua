@@ -8,7 +8,6 @@ function registerPlayer(plyId)
 		keypairs = Tip4serv.split(v,":")
 		if keypairs[1] == "discord" or keypairs[1] == "steam" then 
 			active_players[keypairs[2]] = plyId
-			break 
 		end
 	end
 end
@@ -234,7 +233,6 @@ AddEventHandler('playerDropped', function ()
 		local keypairs = Tip4serv.split(v,":")
 		if(active_players[keypairs[2]] ~= nil) then 
 			active_players[keypairs[2]] = nil
-			break
 		end
 	end
 end)
