@@ -42,7 +42,6 @@ if not Tip4serv then
             --Clear old json infos
             SaveResourceFile(GetCurrentResourceName(), response_path, "")
             --Loop customers
-            print("DURING LOOP :  "..dump(loaded_players))
             local new_json = {}
             for k,infos in ipairs(json_decoded) do
                 local new_obj = {} local new_cmds = {}
@@ -138,7 +137,6 @@ if not Tip4serv then
         end
         
         --Get player FiveM live ID
-        print("DEBUG get player by"..getter_player)
         local playerId = loaded_players[getter_player]
         if(playerId == nil) then
             return false 
@@ -251,32 +249,26 @@ end)
 RegisterNetEvent('tip4serv:onPlayerLoaded')
 AddEventHandler('tip4serv:onPlayerLoaded', function(currentPos,prevPos)
     if (GetPlayerPing(source) ~= 0) then
-        print("DEBUG BEFORE REGISTERING :  "..dump(loaded_players))
         Tip4serv.registerPlayer(source)
-        print("DEBUG AFTER REGISTERING :  "..dump(loaded_players))
     end
 end)
 
 -- Remove player from active list when player leave the server
 AddEventHandler('playerDropped', function ()
     local ply = GetPlayerIdentifiers(source)
-    print("DEBUG BEFORE DELETING :  "..dump(loaded_players))
     for k,v in ipairs(ply) do
         keypairs = Tip4serv.split(v,":")
         if Tip4serv.has_value(p_identifiers, keypairs[1]) then
             loaded_players[v] = nil
         end
     end
-    print("DEBUG AFTER DELETING :  "..dump(loaded_players))
 end)
 
 -- Check command: check if a purchase has been made and give order to player
 local error_cmd = "^5[Tip4serv error] This command must be executed in the server chat^7"
 RegisterCommand(Config.check_cmd_name, function(src, args, raw)
     if src > 0 then
-        print("BEFORE CHECKDONATE :  "..dump(loaded_players))
         Tip4serv.registerPlayer(tonumber(src))
-        print("BEFORE CHECKDONATE :  "..dump(loaded_players))
         TriggerClientEvent("tip4serv:showSubtitle", tonumber(src), Config.order_waiting_text, 5000)
     else
         print(error_cmd)
