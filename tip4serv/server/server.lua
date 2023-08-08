@@ -1,16 +1,7 @@
 -- JSON data files
-local response_path = "data/response.json"
-local active_players= {}
-
-function registerPlayer(plyId) 
-	ply = GetPlayerIdentifiers(plyId)
-	for k,v in ipairs(ply) do 
-		keypairs = Tip4serv.split(v,":")
-		if keypairs[1] == "discord" or keypairs[1] == "steam" then 
-			active_players[keypairs[2]] = plyId
-		end
-	end
-end
+local response_path = "data/response.json" --Commands result (delivered or not)
+local loaded_players = {} --List of loaded players ready to receive their order (spawned player with loaded inventory)
+local p_identifiers = {"discord", "steam", "licence", "license", "fivem"}
 
 -- Utility functions
 if not Tip4serv then
@@ -51,6 +42,7 @@ if not Tip4serv then
 			--Clear old json infos
 			SaveResourceFile(GetCurrentResourceName(), response_path, "")
 			--Loop customers
+			print("DURING LOOP :  "..dump(loaded_players))
 			local new_json = {}
 			for k,infos in ipairs(json_decoded) do
 				local new_obj = {} local new_cmds = {}
@@ -59,9 +51,11 @@ if not Tip4serv then
 				--Check if player is online and loaded and get licence
 				player_infos = Tip4serv.checkifPlayerIsLoaded(infos)
 				licence = infos["xplayerid"]
+                cfxid = infos["cfxid"]
 				if player_infos then
 					new_obj["fivem_live_id"] = player_infos["playerId"]
 					new_obj["xplayerid"] = player_infos["licence"]
+					new_obj["cfxid"] = player_infos["cfxid"]
 					TriggerClientEvent("tip4serv:showSubtitle", player_infos["playerId"], Config.order_received_text, 10000)
 				end
 				--Execute commands for player
@@ -77,6 +71,9 @@ if not Tip4serv then
 							if (licence and string.match(cmd["str"], "{fivem_licence}")) then
 								cmd["str"] = string.gsub(cmd["str"], "{fivem_licence}", licence)
 							end
+                            if (cfxid and string.match(cmd["str"], "{fivem_cfx_id}")) then
+								cmd["str"] = string.gsub(cmd["str"], "{fivem_cfx_id}", cfxid)
+							end
 							Tip4serv.exe_command(cmd["str"])
 							Citizen.Wait(Config.time_between_each_command*1000)
 							new_cmds[tostring(cmd["id"])] = 3
@@ -90,40 +87,72 @@ if not Tip4serv then
 			--Save the new json file
 			SaveResourceFile(GetCurrentResourceName(), response_path, json.encode(new_json, {indent = true}))
 		end, 'GET', '', { ['Authorization'] = MAC })
-	end	
+	end
+    --Check if array contain a value
+    Tip4serv.has_value = function (tab, val)
+        for index, value in ipairs(tab) do
+            if value == val then
+                return true
+            end
+        end
+        return false
+    end
+    --Register player to active players list (spawned)
+    Tip4serv.registerPlayer = function (plyId) 
+        ply = GetPlayerIdentifiers(plyId)
+        for k,v in ipairs(ply) do 
+            keypairs = Tip4serv.split(v,":")
+            if Tip4serv.has_value(p_identifiers, keypairs[1]) then
+                loaded_players[v] = plyId
+            end
+        end
+    end   
 	local char_to_hex = function(c)
 	  return string.format("%%%02X", string.byte(c))
 	end	
 	Tip4serv.getHexSteamId = function ( steamId )
 		return string.format("%x", steamId)
 	end
+    --Check if player is active and inventory available (spawned)
 	Tip4serv.checkifPlayerIsLoaded = function ( infos)
 		local getter_player = ""
-		
-		
-		if infos["auth"] == "steamid" then 
-			if infos["steamid"] ~= "" then
-				getter_player = Tip4serv.getHexSteamId(infos["steamid"])
-			else 
-				return false 
-			end
+        
+        --Find player by licence if specified
+        if infos["xplayerid"] ~= "" then 
+            getter_player = "license:"..infos["xplayerid"]
+            if loaded_players[getter_player] == nil then
+                getter_player = "licence:"..infos["xplayerid"]
+            end
+            
+		--Find player by Steam ID
+		elseif infos["auth"] == "steamid" and infos["steamid"] ~= "" then
+			getter_player = "steam:"..Tip4serv.getHexSteamId(infos["steamid"])
+            
+        --Find player by Discord ID		
+		elseif infos["auth"] == "discordid" and infos["discordid"] ~= "" then
+			getter_player = "discord:"..infos["discordid"]
+            
+        --Find player by CFX FiveM ID
+		elseif infos["auth"] == "cfxid" and infos["cfxid"] ~= "" then
+			getter_player = "fivem:"..infos["cfxid"]
 		end
-		if infos["auth"] == "discordid" then 
-			if infos["discordid"] ~= "" then 
-				getter_player = infos["discordid"]
-			else 
-				return false; 
-			end
-		end
-		local playerId =active_players[getter_player]
-		if(playerId == nil) then 
+        
+        --Get player FiveM live ID
+        print("DEBUG get player by"..getter_player)
+		local playerId = loaded_players[getter_player]
+		if(playerId == nil) then
 			return false 
 		end
 		local ply = GetPlayerIdentifiers(playerId)
 		local player_infos = {}
 		for k, v in ipairs(ply) do 
 			local key_pairs = Tip4serv.split(v, ":")
-			if key_pairs[1]=="license" then 
+            --Get CFX id
+            if key_pairs[1] == "fivem" then 
+ 				player_infos["cfxid"] = key_pairs[2]           
+            end
+            --Get license
+			if key_pairs[1] == "license" or key_pairs[1] == "licence" then
 				player_infos["licence"] = key_pairs[2]
 				player_infos["playerId"] = playerId
 				return player_infos
@@ -222,29 +251,49 @@ end)
 RegisterNetEvent('tip4serv:onPlayerLoaded')
 AddEventHandler('tip4serv:onPlayerLoaded', function(currentPos,prevPos)
 	if (GetPlayerPing(source) ~= 0) then
-		registerPlayer(source)
+        print("DEBUG BEFORE REGISTERING :  "..dump(loaded_players))
+		Tip4serv.registerPlayer(source)
+		print("DEBUG AFTER REGISTERING :  "..dump(loaded_players))
 	end
 end)
 
 -- Remove player from active list when player leave the server
 AddEventHandler('playerDropped', function ()
 	local ply = GetPlayerIdentifiers(source)
+    print("DEBUG BEFORE DELETING :  "..dump(loaded_players))
 	for k,v in ipairs(ply) do
-		local keypairs = Tip4serv.split(v,":")
-		if(active_players[keypairs[2]] ~= nil) then 
-			active_players[keypairs[2]] = nil
-		end
+        keypairs = Tip4serv.split(v,":")
+        if Tip4serv.has_value(p_identifiers, keypairs[1]) then
+            loaded_players[v] = nil
+        end
 	end
+    print("DEBUG AFTER DELETING :  "..dump(loaded_players))
 end)
 
 -- Check command: check if a purchase has been made and give order to player
 local error_cmd = "^5[Tip4serv error] This command must be executed in the server chat^7"
 RegisterCommand(Config.check_cmd_name, function(src, args, raw)
 	if src > 0 then
-		registerPlayer(tonumber(src))
+    	print("BEFORE CHECKDONATE :  "..dump(loaded_players))
+		Tip4serv.registerPlayer(tonumber(src))
+        print("BEFORE CHECKDONATE :  "..dump(loaded_players))
 		TriggerClientEvent("tip4serv:showSubtitle", tonumber(src), Config.order_waiting_text, 5000)
 	else
 		print(error_cmd)
 		return
 	end
 end, false)
+
+-- FOR DEBUGGING PURPOSES
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+end
