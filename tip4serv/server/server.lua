@@ -1,7 +1,7 @@
 -- JSON data files
 local response_path = "data/response.json" --Commands result (delivered or not)
 local loaded_players = {} --List of loaded players ready to receive their order (spawned player with loaded inventory)
-local p_identifiers = {"discord", "steam", "licence", "license", "fivem"}
+local p_identifiers = {"discord", "steam", "licence", "license", "fivem"} --Player is recognized on the server thanks to these identifiers
 
 -- Utility functions
 if not Tip4serv then
