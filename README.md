@@ -9,10 +9,9 @@ Tip4serv adds a layer of security using HMAC authentication to communicate. It i
 
 #### Installation
 
-Open an account on [Tip4serv.com](https://tip4serv.com/?ads=github).
-
-1) Fill in the requested information in MY SETTINGS
-2) Add a FiveM server in MY SERVERS and follow the instructions requested
+1) Open an account on [Tip4serv.com](https://tip4serv.com/?ads=github).
+2) Fill in the requested information in MY SETTINGS
+3) Add a FiveM server in MY SERVERS and follow the instructions requested
 
 You get this message in the console when the server has started: **Server has been successfully connected**
 
