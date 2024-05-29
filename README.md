@@ -133,7 +133,7 @@ Example: `giveinventoryitem {fivem_live_id} WEAPON_KNIFE 1`
 
 ##### givevehicletoplayer {fivem_live_id} [Model]
 
-[HH Vehextras is required](https://github.com/hhfw1/hh_vehextras)
+[HH Vehextras is required](https://github.com/hhfw1/hh_vehextras) (But you can use any script as long as it offers console commands)
 
 This command give a vehicle to a player
 
