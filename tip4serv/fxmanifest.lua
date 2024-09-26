@@ -1,5 +1,5 @@
 fx_version 'adamant'
-games { 'gta5' }
+games { 'rdr3', 'gta5' }
 
 author 'Murgator'
 description 'Tip4serv'
