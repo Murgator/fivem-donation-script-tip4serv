@@ -13,10 +13,10 @@ if not Tip4serv then
         local response = LoadResourceFile(GetCurrentResourceName(), response_path)
         local json_encoded = ""
         if (response) then
-            json_encoded = Tip4serv.urlencode(response)
+            json_encoded = response
         end
         --Request Tip4serv
-        local statusUrl = "https://api.tip4serv.com/payments_api_v2.php?id="..server_id.."&time="..timestamp.."&json="..json_encoded.."&get_cmd="..get_cmd
+        local statusUrl = "https://api.tip4serv.com/payments_api_v2.php?id="..server_id.."&time="..timestamp.."&get_cmd="..get_cmd
         PerformHttpRequest(statusUrl, function(statusCode, tip4serv_response, _)
             if (statusCode ~= 200 or tip4serv_response == nil) then
                 if (get_cmd == "no") then
@@ -85,7 +85,7 @@ if not Tip4serv then
             end
             --Save the new json file
             SaveResourceFile(GetCurrentResourceName(), response_path, json.encode(new_json, {indent = true}))
-        end, 'GET', '', { ['Authorization'] = MAC })
+        end, 'POST', json_encoded, { ['Authorization'] = MAC })
     end
     --Check if array contain a value
     Tip4serv.has_value = function (tab, val)
@@ -175,15 +175,6 @@ if not Tip4serv then
     Tip4serv.calculateHMAC = function (server_id, public_key, private_key, timestamp)
         local datas = server_id..public_key..timestamp
         return Tip4serv.base64_encode(sha256.hmac_sha256(private_key, datas))
-    end
-    Tip4serv.urlencode = function(url)
-      if url == nil then
-        return
-      end
-      url = url:gsub("\n", "\r\n")
-      url = url:gsub("([^%w ])", char_to_hex)
-      url = url:gsub(" ", "+")
-      return url
     end
     Tip4serv.exe_command = function(cmd)
         return_code, result = pcall(
